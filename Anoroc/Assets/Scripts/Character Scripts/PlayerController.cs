@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 [RequireComponent(typeof(PlayerMotor))]
 public class PlayerController : MonoBehaviour
@@ -23,6 +24,7 @@ public class PlayerController : MonoBehaviour
     Camera cam;
     PlayerMotor motor;
 
+    PhotonView view;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +32,7 @@ public class PlayerController : MonoBehaviour
         cam = Camera.main;
         motor = GetComponent<PlayerMotor>();
         animator = GetComponentInChildren<Animator>();
+        view = GetComponent<PhotonView>();
         inventory.ItemUsed += Inventory_ItemUsed;
         inventory.ItemRemoved += Inventory_ItemRemoved;
     }
@@ -45,32 +48,34 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Player movement for left mouse button
-        if(Input.GetMouseButtonDown(0)) {
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
+        if(view.IsMine){
+            // Player movement for left mouse button
+            if(Input.GetMouseButtonDown(0)) {
+                Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
 
-            if(Physics.Raycast(ray, out hit, 100, movementMask)){
-                //Debug.Log("We hit " + hit.collider.name + " " + hit.point);
-                motor.MoveToPoint(hit.point);
+                if(Physics.Raycast(ray, out hit, 100, movementMask)){
+                    //Debug.Log("We hit " + hit.collider.name + " " + hit.point);
+                    motor.MoveToPoint(hit.point);
+                }
             }
-        }
 
-        if(Input.GetMouseButtonDown(1)) {
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
+            if(Input.GetMouseButtonDown(1)) {
+                Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
 
-            if(Physics.Raycast(ray, out hit, 100)){
-                // Check if we hit an interactable
+                if(Physics.Raycast(ray, out hit, 100)){
+                    // Check if we hit an interactable
+                }
             }
-        }
 
-        if(mItemToPickup != null && Input.GetKeyDown(KeyCode.F))
-        {
-            animator.SetTrigger("tr_pickup");
-            inventory.AddItem(mItemToPickup);
-            mItemToPickup.OnPickup();
-            Hud.CloseMessagePanel();
+            if(mItemToPickup != null && Input.GetKeyDown(KeyCode.F))
+            {
+                animator.SetTrigger("tr_pickup");
+                inventory.AddItem(mItemToPickup);
+                mItemToPickup.OnPickup();
+                Hud.CloseMessagePanel();
+            }
         }
     }
 
