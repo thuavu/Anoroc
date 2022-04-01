@@ -21,8 +21,13 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: Project
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 542}
+=======
+  m_RootView: {fileID: 2}
+  m_MinSize: {x: 875, y: 300}
+>>>>>>> parent of 5be422a (Imported animations and implemented movement)
 =======
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
@@ -152,6 +157,9 @@ MonoBehaviour:
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
   controlID: 128
+<<<<<<< HEAD
+>>>>>>> parent of 5be422a (Imported animations and implemented movement)
+=======
 >>>>>>> parent of 5be422a (Imported animations and implemented movement)
 --- !u!114 &6
 MonoBehaviour:
@@ -189,6 +197,9 @@ MonoBehaviour:
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
   controlID: 64
+<<<<<<< HEAD
+>>>>>>> parent of 5be422a (Imported animations and implemented movement)
+=======
 >>>>>>> parent of 5be422a (Imported animations and implemented movement)
 --- !u!114 &7
 MonoBehaviour:
@@ -223,6 +234,9 @@ MonoBehaviour:
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
   controlID: 65
+<<<<<<< HEAD
+>>>>>>> parent of 5be422a (Imported animations and implemented movement)
+=======
 >>>>>>> parent of 5be422a (Imported animations and implemented movement)
 --- !u!114 &8
 MonoBehaviour:
@@ -615,10 +629,13 @@ MonoBehaviour:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
       m_SelectedIDs: d23d0000
       m_LastClickedID: 0
       m_ExpandedIDs: 6a85fdff1e86fdff
 =======
+=======
+>>>>>>> parent of 5be422a (Imported animations and implemented movement)
       m_SelectedIDs: 
       m_LastClickedID: 0
       m_ExpandedIDs: 72fbffff
@@ -683,9 +700,15 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_Position:
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: {x: 0, y: 0, z: 0}
     speed: 2
     m_Value: {x: 0, y: 0, z: 0}
+=======
+    m_Target: {x: -1.2806433, y: 4.1143575, z: -1.5994285}
+    speed: 2
+    m_Value: {x: -1.2806433, y: 4.1143575, z: -1.5994285}
+>>>>>>> parent of 5be422a (Imported animations and implemented movement)
 =======
     m_Target: {x: -1.2806433, y: 4.1143575, z: -1.5994285}
     speed: 2
@@ -742,9 +765,15 @@ MonoBehaviour:
     m_Value: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
   m_Size:
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: 10
     speed: 2
     m_Value: 10
+=======
+    m_Target: 8.717219
+    speed: 2
+    m_Value: 8.717219
+>>>>>>> parent of 5be422a (Imported animations and implemented movement)
 =======
     m_Target: 8.717219
     speed: 2
@@ -859,6 +888,9 @@ MonoBehaviour:
 =======
     m_Text: Project
     m_Image: {fileID: -5467254957812901981, guid: 0000000000000000d000000000000000, type: 0}
+<<<<<<< HEAD
+>>>>>>> parent of 5be422a (Imported animations and implemented movement)
+=======
 >>>>>>> parent of 5be422a (Imported animations and implemented movement)
     m_Tooltip: 
   m_Pos:
