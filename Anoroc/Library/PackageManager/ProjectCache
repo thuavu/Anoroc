@@ -5,26 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-<<<<<<< Updated upstream
-      ticks: 637820475984247358
-    m_Hash: 4179566897
-=======
-      ticks: 637827225161107582
-    m_Hash: 3635461676
->>>>>>> Stashed changes
+      ticks: 637843784314990786
+    m_Hash: 1862636597
   m_LockFileStatus:
     m_FilePath: C:/GitHub/Anoroc/Anoroc/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-<<<<<<< Updated upstream
-      ticks: 637820476020227194
-    m_Hash: 4197502262
-=======
-      ticks: 637827225161147613
-    m_Hash: 3570236377
->>>>>>> Stashed changes
+      ticks: 637843784315000802
+    m_Hash: 700085337
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
@@ -2941,9 +2931,6 @@ m_PackageAssets:
         revision: 4cd880d4fd5c60597629249bf4f324e4c8d7aa2e
         path: 
   m_LocalPackages:
-<<<<<<< Updated upstream
-    m_LocalFileStatus: []
-=======
     m_LocalFileStatus:
     - m_FilePath: C:\Program Files\Unity\Hub\Editor\2020.3.27f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.2d.sprite/package.json
       m_PathExists: 1
@@ -2959,6 +2946,5 @@ m_PackageAssets:
         serializedVersion: 2
         ticks: 0
       m_Hash: 0
->>>>>>> Stashed changes
 m_ProjectPath: C:/GitHub/Anoroc/Anoroc/Packages
 m_EditorVersion: 2020.3.27f1 (e759542391ea)
