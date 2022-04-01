@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     public LayerMask movementMask;
 
-    /*
+
     public Inventory inventory;
 
     public GameObject Hand;
@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     private IInventoryItem mItemToPickup = null;
     private IInventoryItem mCurrentItem = null;
     private bool mLockPickup = false;
-    */
+
 
     private Animator animator;
 
@@ -31,21 +31,21 @@ public class PlayerController : MonoBehaviour
         cam = Camera.main;
         motor = GetComponent<PlayerMotor>();
         animator = GetComponentInChildren<Animator>();
-        /*
+
         inventory.ItemUsed += Inventory_ItemUsed;
         inventory.ItemRemoved += Inventory_ItemRemoved;
-        */
+
     }
 
-    /*
+
     void FixedUpdate()
     {
-        if(mCurrentItem != null && Input.GetKeyDown(KeyCode.R))
+        if (mCurrentItem != null && Input.GetKeyDown(KeyCode.R))
         {
             DropCurrentItem();
         }
     }
-    */
+
 
     // Update is called once per frame
     void Update()
@@ -69,18 +69,18 @@ public class PlayerController : MonoBehaviour
                 // Check if we hit an interactable
             }
         }
-        /*
-        if(mItemToPickup != null && Input.GetKeyDown(KeyCode.F))
+
+        if (mItemToPickup != null && Input.GetKeyDown(KeyCode.F))
         {
             animator.SetTrigger("tr_pickup");
             inventory.AddItem(mItemToPickup);
             mItemToPickup.OnPickup();
             Hud.CloseMessagePanel();
         }
-        */
+
     }
 
-    /*
+
     private void Inventory_ItemRemoved(object sender, InventoryEventArgs e)
     {
         IInventoryItem item = e.Item;
@@ -100,7 +100,7 @@ public class PlayerController : MonoBehaviour
             return;
 
         IInventoryItem item = other.GetComponent<IInventoryItem>();
-        if(item != null)
+        if (item != null)
         {
             mItemToPickup = item;
             Hud.OpenMessagePanel("");
@@ -148,5 +148,5 @@ public class PlayerController : MonoBehaviour
         Destroy((mCurrentItem as MonoBehaviour).GetComponent<Rigidbody>());
         mCurrentItem = null;
     }
-    */
+
 }
