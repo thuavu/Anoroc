@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     public LayerMask movementMask;
 
+    /*
     public Inventory inventory;
 
     public GameObject Hand;
@@ -16,6 +17,7 @@ public class PlayerController : MonoBehaviour
     private IInventoryItem mItemToPickup = null;
     private IInventoryItem mCurrentItem = null;
     private bool mLockPickup = false;
+    */
 
     private Animator animator;
 
@@ -23,17 +25,19 @@ public class PlayerController : MonoBehaviour
     Camera cam;
     PlayerMotor motor;
 
-
     // Start is called before the first frame update
     void Start()
     {
         cam = Camera.main;
         motor = GetComponent<PlayerMotor>();
         animator = GetComponentInChildren<Animator>();
+        /*
         inventory.ItemUsed += Inventory_ItemUsed;
         inventory.ItemRemoved += Inventory_ItemRemoved;
+        */
     }
 
+    /*
     void FixedUpdate()
     {
         if(mCurrentItem != null && Input.GetKeyDown(KeyCode.R))
@@ -41,6 +45,7 @@ public class PlayerController : MonoBehaviour
             DropCurrentItem();
         }
     }
+    */
 
     // Update is called once per frame
     void Update()
@@ -64,7 +69,7 @@ public class PlayerController : MonoBehaviour
                 // Check if we hit an interactable
             }
         }
-
+        /*
         if(mItemToPickup != null && Input.GetKeyDown(KeyCode.F))
         {
             animator.SetTrigger("tr_pickup");
@@ -72,8 +77,10 @@ public class PlayerController : MonoBehaviour
             mItemToPickup.OnPickup();
             Hud.CloseMessagePanel();
         }
+        */
     }
 
+    /*
     private void Inventory_ItemRemoved(object sender, InventoryEventArgs e)
     {
         IInventoryItem item = e.Item;
@@ -141,4 +148,5 @@ public class PlayerController : MonoBehaviour
         Destroy((mCurrentItem as MonoBehaviour).GetComponent<Rigidbody>());
         mCurrentItem = null;
     }
+    */
 }
