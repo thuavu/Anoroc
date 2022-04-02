@@ -127,6 +127,9 @@ MonoBehaviour:
   movementMask:
     serializedVersion: 2
     m_Bits: 64
+  inventory: {fileID: 1525420922478726887, guid: 9e1f2e7a051aec7469faa3f679e6c37d, type: 3}
+  Hand: {fileID: 2213918873358878595}
+  Hud: {fileID: 7225982413712955190, guid: 433016f86151cd84895ebd04c42a06ac, type: 3}
   cam: {fileID: 8029263069092196220}
 --- !u!114 &8029263068764373251
 MonoBehaviour:
@@ -384,6 +387,11 @@ GameObject:
 --- !u!4 &7559033887714186134 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1ab7616fce8e4944dab3c85a4f7d00fc, type: 3}
+  m_PrefabInstance: {fileID: 8029263067271754877}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2213918873358878595 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8202399917511259134, guid: 1ab7616fce8e4944dab3c85a4f7d00fc, type: 3}
   m_PrefabInstance: {fileID: 8029263067271754877}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &3685637162386955822

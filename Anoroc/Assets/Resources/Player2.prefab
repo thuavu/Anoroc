@@ -714,6 +714,9 @@ MonoBehaviour:
   movementMask:
     serializedVersion: 2
     m_Bits: 64
+  inventory: {fileID: 1525420922478726887, guid: 9e1f2e7a051aec7469faa3f679e6c37d, type: 3}
+  Hand: {fileID: 146540927562460559}
+  Hud: {fileID: 7225982413712955190, guid: 433016f86151cd84895ebd04c42a06ac, type: 3}
   cam: {fileID: 2432690635874080675}
 --- !u!114 &2432690636198754780
 MonoBehaviour:
