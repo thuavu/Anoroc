@@ -714,9 +714,7 @@ MonoBehaviour:
   movementMask:
     serializedVersion: 2
     m_Bits: 64
-  inventory: {fileID: 0}
-  Hand: {fileID: 0}
-  Hud: {fileID: 0}
+  cam: {fileID: 2432690635874080675}
 --- !u!114 &2432690636198754780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -773,6 +771,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 8255780136818501032}
+  - {fileID: 8657786095888549729}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -1763,6 +1762,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8383134095557032346}
   - component: {fileID: 2501411904612312032}
+  - component: {fileID: 8657786095888549729}
   m_Layer: 0
   m_Name: Mui Goloroh
   m_TagString: Untagged
@@ -1807,6 +1807,30 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8657786095888549729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9159530714525606688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters:
+  - Type: 1
+    SynchronizeType: 2
+    Name: speedPercent
+  - Type: 9
+    SynchronizeType: 2
+    Name: tr_pickup
+  m_SynchronizeLayers:
+  - SynchronizeType: 2
+    LayerIndex: 0
 --- !u!1 &9195904581684045834
 GameObject:
   m_ObjectHideFlags: 0
