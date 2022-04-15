@@ -7,6 +7,7 @@ using UnityEngine.AI;
 public class PlayerMotor : MonoBehaviour
 {
     NavMeshAgent agent;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +17,7 @@ public class PlayerMotor : MonoBehaviour
     // Update is called once per frame
     public void MoveToPoint(Vector3 point)
     {
-        agent.SetDestination(point);
+        //agent.SetDestination(point);
+        agent.Move(point);
     }
 }

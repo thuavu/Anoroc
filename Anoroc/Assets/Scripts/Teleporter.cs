@@ -12,9 +12,10 @@ public class Teleporter : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Teleporter"))
         {
-            //Item.transform.position = StartTeleporter.transform.position;
-            Item.transform.position = new Vector3(15.75f, 0.712f, 23.4f);
             Debug.Log("TELEPORT 1");
+            Item.transform.position = StartTeleporter.transform.position;
+            //Item.transform.position = new Vector3(15.75f, 0.712f, 23.4f);
+            
         }
 
         if (collision.gameObject.CompareTag("Teleporter2"))
