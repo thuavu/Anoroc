@@ -133,6 +133,7 @@ public class PlayerController : MonoBehaviour
             }*/
 
 
+            // Best Player WASD Movement
             float xDir = Input.GetAxisRaw("Horizontal");
             float zDir = Input.GetAxisRaw("Vertical");
             Vector3 dir = new Vector3(xDir, 0f, zDir).normalized;
@@ -144,7 +145,6 @@ public class PlayerController : MonoBehaviour
                 transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
                 Vector3 moveDir;
-
                 if (Input.GetKey(KeyCode.S)){
                     moveDir = Quaternion.Euler(0f, targetAngle, 0f) * -Vector3.forward;
                 }
@@ -152,14 +152,14 @@ public class PlayerController : MonoBehaviour
                     moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
                 }
 
-                motor.MoveToPoint(moveDir.normalized * speed * Time.deltaTime);
-                
+                // Animator that controls walking animation manually
+                animator.SetFloat("speedPercent", 0.75f);
+
+                // Move charactor
+                motor.MoveToPoint(moveDir.normalized * speed * Time.deltaTime); 
             }
 
-
-
-
-
+            // Pick up items
             if(mItemToPickup != null && Input.GetKeyDown(KeyCode.F))
             {
                 animator.SetTrigger("tr_pickup");
