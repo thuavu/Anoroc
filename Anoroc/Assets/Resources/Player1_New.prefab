@@ -168,7 +168,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 657242541870025584}
-  m_LocalRotation: {x: -0.000000007450581, y: -0.000094726594, z: 0.000021626773, w: 1}
+  m_LocalRotation: {x: -0.000000014901161, y: -0.00041639956, z: 0.0000950475, w: 0.99999994}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1962,6 +1962,8 @@ MonoBehaviour:
   inventory: {fileID: 1525420922478726887, guid: 9e1f2e7a051aec7469faa3f679e6c37d, type: 3}
   turnSmoothTime: 0.1
   newCam: {fileID: 657242542972983184}
+  mainCam: {fileID: 5747874774695897318}
+  thirdPersonCam: {fileID: 657242542972983185}
   Hand: {fileID: 4472156770245836825}
   Hud: {fileID: 7225982413712955190, guid: 433016f86151cd84895ebd04c42a06ac, type: 3}
 --- !u!114 &5747874773964637849
@@ -2067,7 +2069,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5747874774695897316}
-  m_LocalRotation: {x: 0.11196588, y: -0.0005538018, z: 0.00006239107, w: 0.99371195}
+  m_LocalRotation: {x: 0.11196586, y: -0.00088167266, z: 0.00009933322, w: 0.9937117}
   m_LocalPosition: {x: 0, y: 2.5, z: -9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []

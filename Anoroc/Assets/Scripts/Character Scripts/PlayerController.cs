@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
 
     public Transform newCam;
 
+    [SerializeField] private Camera mainCam;
+    [SerializeField] private GameObject thirdPersonCam;
 
 
 
@@ -32,8 +34,6 @@ public class PlayerController : MonoBehaviour
     private bool mLockPickup = false;
 
     private Animator animator;
-
-    //[SerializeField] private Camera cam;
     PlayerMotor motor;
 
     PhotonView view;
@@ -44,10 +44,11 @@ public class PlayerController : MonoBehaviour
         motor = GetComponent<PlayerMotor>();
         animator = GetComponentInChildren<Animator>();
         view = GetComponent<PhotonView>();
-        /*if(!view.IsMine)
+        if(!view.IsMine)
         {
-            cam.enabled = false;
-        }*/
+            mainCam.enabled = false;
+            thirdPersonCam.SetActive(false);
+        }
         
     }
 
@@ -85,53 +86,6 @@ public class PlayerController : MonoBehaviour
                     // Check if we hit an interactable
                 }
             }*/
-
-            // Player movement WASD
-            /*Vector3 Movement = new Vector3 (Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-            Ray ray;
-            //RaycastHit hit;
-            Vector3 point;
-
-            if (Input.GetKey(KeyCode.A)){
-                //point = Vector3.left + (motor.transform.position += Movement * speed * Time.deltaTime);
-                //point = (motor.transform.position += Movement * speed * Time.deltaTime);
-                //motor.transform.position += Movement * speed * Time.deltaTime;
-                point = Vector3.left + (motor.transform.position += Movement * speed * Time.deltaTime);
-                ray = cam.ScreenPointToRay(point);
-                motor.MoveToPoint(point);
-
-                Debug.Log("Left: " + Vector3.left);
-                Debug.Log("Point: " + point);
-                
-            }   
-            else if (Input.GetKey(KeyCode.D)){
-                //point = Vector3.right + (motor.transform.position += Movement * speed * Time.deltaTime);
-                //motor.transform.position += Movement * speed * Time.deltaTime;
-                point = Vector3.right + (motor.transform.position += Movement * speed * Time.deltaTime);
-                ray = cam.ScreenPointToRay(point);
-                motor.MoveToPoint(point);
-
-                //Debug.Log("Point: " + point);
-            }
-            else if (Input.GetKey(KeyCode.W)){
-                //point = Vector3.up + (motor.transform.position += Movement * speed * Time.deltaTime);
-                //motor.transform.position += Movement * speed * Time.deltaTime;
-                point = (motor.transform.position += Movement * speed * Time.deltaTime);
-                ray = cam.ScreenPointToRay(point);
-                motor.MoveToPoint(point);
-
-                //Debug.Log("Point: " + point);
-            }
-            else if (Input.GetKey(KeyCode.S)){
-                //point = Vector3.down + (motor.transform.position += Movement * speed * Time.deltaTime);
-                //motor.transform.position += Movement * speed * Time.deltaTime;
-                point = (motor.transform.position += Movement * speed * Time.deltaTime);
-                ray = cam.ScreenPointToRay(point);
-                motor.MoveToPoint(point);
-
-                //Debug.Log("Point: " + point);
-            }*/
-
 
             // Best Player WASD Movement
             float xDir = Input.GetAxisRaw("Horizontal");
