@@ -119,6 +119,10 @@ public class PlayerController : MonoBehaviour
                 animator.SetTrigger("tr_pickup");
                 inventory.AddItem(mItemToPickup);
                 mItemToPickup.OnPickup();
+                if (mItemToPickup.Name == "key")
+                {
+                    view.RPC("SetThisInactive", RpcTarget.All, 1);
+                }
                 Hud.CloseMessagePanel();
             }
 
@@ -181,13 +185,35 @@ public class PlayerController : MonoBehaviour
         mCurrentItem = e.Item;
     }
 
+    [PunRPC]
+    void SetThisInactive(int ID)
+    {
+        PhotonView.Find(ID).gameObject.SetActive(false);
+    }
+
+    [PunRPC]
+    void SetThisActive(int ID)
+    {
+        PhotonView.Find(ID).gameObject.SetActive(true);
+    }
+
+    [PunRPC]
+    void Teleport(int ID)
+    {
+        PhotonView.Find(ID).gameObject.transform.position = new Vector3(24f, 1f, 1.66f);
+    }
+
     public void DropCurrentItem()
     {
         GameObject goItem = (mCurrentItem as MonoBehaviour).gameObject;
 
         inventory.RemoveItem(mCurrentItem);
 
-        goItem.transform.position = new Vector3(0, 1, 0);
+        if (mItemToPickup.Name == "key")
+        {
+            view.RPC("SetThisActive", RpcTarget.All, 1);
+            view.RPC("Teleport", RpcTarget.All, 1);
+        }
 
         goItem.transform.parent = null;
 
