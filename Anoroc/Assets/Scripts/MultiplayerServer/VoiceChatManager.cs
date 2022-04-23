@@ -11,17 +11,24 @@ public class VoiceChatManager : MonoBehaviourPunCallbacks
     IRtcEngine rtcEngine;
 
     void Awake(){
-        if(Instance){
+        Debug.Log("Agora Script Here");
+        if(!Instance){
             Destroy(gameObject);
         }
         else{
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
+        
+        /*if(!Instance){
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }*/
     }
 
     void Start(){
         rtcEngine = IRtcEngine.GetEngine(appID);
+        Debug.Log("Agora Script Here" + rtcEngine.OnError);
 
         rtcEngine.OnJoinChannelSuccess += OnJoinChannelSuccess;
         rtcEngine.OnLeaveChannel += OnLeaveChannel;
