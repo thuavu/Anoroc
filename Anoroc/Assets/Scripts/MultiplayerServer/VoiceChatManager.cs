@@ -1,4 +1,4 @@
-using System.Collections;
+/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using agora_gaming_rtc;
@@ -23,7 +23,7 @@ public class VoiceChatManager : MonoBehaviourPunCallbacks
         /*if(!Instance){
             Instance = this;
             DontDestroyOnLoad(gameObject);
-        }*/
+        }//
     }
 
     void Start(){
@@ -58,4 +58,4 @@ public class VoiceChatManager : MonoBehaviourPunCallbacks
     void OnDestroy(){
         IRtcEngine.Destroy();
     }
-}
+}*/
