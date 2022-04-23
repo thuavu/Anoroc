@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Teleporter
+  - Teleporter2
+  - Object
+  - Background
+  - GameMusic
   layers:
   - Default
   - TransparentFX
