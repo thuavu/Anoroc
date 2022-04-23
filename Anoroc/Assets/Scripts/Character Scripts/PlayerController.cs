@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
         view = GetComponent<PhotonView>();
         if(!view.IsMine)
         {
-            mainCam.enabled = false;
+            mainCam.enabled = true;
             thirdPersonCam.SetActive(false);
         }
         
@@ -200,7 +200,7 @@ public class PlayerController : MonoBehaviour
     [PunRPC]
     void Teleport(int ID)
     {
-        PhotonView.Find(ID).gameObject.transform.position = new Vector3(24f, 1f, 1.66f);
+        PhotonView.Find(ID).gameObject.transform.position = new Vector3(-2.7f, 0.06f, -5.6f);
     }
 
     public void DropCurrentItem()
