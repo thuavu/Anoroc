@@ -23,15 +23,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Camera mainCam;
     [SerializeField] private GameObject thirdPersonCam;
 
-
-
     [SerializeField] private GameObject Hand;
+    [SerializeField] private GameObject Flames;
 
     public HUD Hud;
 
     private IInventoryItem mItemToPickup = null;
     private IInventoryItem mCurrentItem = null;
     private bool mLockPickup = false;
+    private bool Player1Send = false;
 
     private Animator animator;
     PlayerMotor motor;
@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour
                 }
             }*/
 
-            // Best Player WASD Movement
+            
             float xDir = Input.GetAxisRaw("Horizontal");
             float zDir = Input.GetAxisRaw("Vertical");
             Vector3 dir = new Vector3(xDir, 0f, zDir).normalized;
@@ -122,6 +122,10 @@ public class PlayerController : MonoBehaviour
                 if (mItemToPickup.Name == "key")
                 {
                     view.RPC("SetThisInactive", RpcTarget.All, 1);
+                }
+                else if (mItemToPickup.Name == "screwdriver")
+                {
+                    view.RPC("SetThisInactive", RpcTarget.All, 2);
                 }
                 Hud.CloseMessagePanel();
             }
@@ -192,15 +196,27 @@ public class PlayerController : MonoBehaviour
     }
 
     [PunRPC]
+    void SetThisInactiveParticle(int ID)
+    {
+        PhotonView.Find(ID).GetComponent<ParticleSystem>().enableEmission = false;
+    }
+
+    [PunRPC]
     void SetThisActive(int ID)
     {
         PhotonView.Find(ID).gameObject.SetActive(true);
     }
 
     [PunRPC]
-    void Teleport(int ID)
+    void TeleportKey(int ID)
     {
-        PhotonView.Find(ID).gameObject.transform.position = new Vector3(-2.7f, 0.06f, -5.6f);
+        PhotonView.Find(ID).gameObject.transform.position = new Vector3(10.224f, 1.46f, -13.1f);
+    }
+
+    [PunRPC]
+    void TeleportScrewDriver(int ID)
+    {
+        PhotonView.Find(ID).gameObject.transform.position = new Vector3(-8.076f, 1.461f, -13.028f);
     }
 
     public void DropCurrentItem()
@@ -209,10 +225,25 @@ public class PlayerController : MonoBehaviour
 
         inventory.RemoveItem(mCurrentItem);
 
-        if (mItemToPickup.Name == "key")
+        if (mItemToPickup.Name == "screwdriver" && Player1Send == true)
+        {
+            view.RPC("SetThisActive", RpcTarget.All, 2);
+            view.RPC("SetThisInactiveParticle", RpcTarget.All, 3);
+        }
+        else if (mItemToPickup.Name == "screwdriver")
+        {
+            view.RPC("SetThisActive", RpcTarget.All, 2);
+            view.RPC("TeleportScrewDriver", RpcTarget.All, 2);
+            Player1Send = true;
+        }
+        else if (mItemToPickup.Name == "key" && Player1Send == true)
         {
             view.RPC("SetThisActive", RpcTarget.All, 1);
-            view.RPC("Teleport", RpcTarget.All, 1);
+            view.RPC("TeleportKey", RpcTarget.All, 1);
+        }
+        else if (mItemToPickup.Name == "key")
+        {
+            view.RPC("SetThisActive", RpcTarget.All, 1);
         }
 
         goItem.transform.parent = null;

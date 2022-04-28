@@ -1964,7 +1964,8 @@ MonoBehaviour:
   newCam: {fileID: 657242542972983184}
   mainCam: {fileID: 5747874774695897318}
   thirdPersonCam: {fileID: 657242542972983185}
-  Hand: {fileID: 4472156770245836825}
+  Hand: {fileID: 6304261309849768372}
+  Flames: {fileID: 7379154295508691647, guid: c86bdb5ead83b0f4088c26b0c3820b24, type: 3}
   Hud: {fileID: 7225982413712955190, guid: 433016f86151cd84895ebd04c42a06ac, type: 3}
 --- !u!114 &5747874773964637849
 MonoBehaviour:
