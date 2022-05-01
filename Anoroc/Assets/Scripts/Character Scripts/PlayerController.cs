@@ -116,15 +116,18 @@ public class PlayerController : MonoBehaviour
             // Pick up items
             if(mItemToPickup != null && Input.GetKeyDown(KeyCode.F))
             {
-                animator.SetTrigger("tr_pickup");
-                inventory.AddItem(mItemToPickup);
-                mItemToPickup.OnPickup();
                 if (mItemToPickup.Name == "key")
                 {
+                    animator.SetTrigger("tr_pickup");
+                    inventory.AddItem(mItemToPickup);
+                    mItemToPickup.OnPickup();
                     view.RPC("SetThisInactive", RpcTarget.All, 1);
                 }
                 else if (mItemToPickup.Name == "screwdriver")
                 {
+                    animator.SetTrigger("tr_pickup");
+                    inventory.AddItem(mItemToPickup);
+                    mItemToPickup.OnPickup();
                     view.RPC("SetThisInactive", RpcTarget.All, 2);
                 }
                 Hud.CloseMessagePanel();
@@ -224,26 +227,24 @@ public class PlayerController : MonoBehaviour
         GameObject goItem = (mCurrentItem as MonoBehaviour).gameObject;
 
         inventory.RemoveItem(mCurrentItem);
-
+        
         if (mItemToPickup.Name == "screwdriver" && Player1Send == true)
         {
             view.RPC("SetThisActive", RpcTarget.All, 2);
             view.RPC("SetThisInactiveParticle", RpcTarget.All, 3);
         }
-        else if (mItemToPickup.Name == "screwdriver")
-        {
-            view.RPC("SetThisActive", RpcTarget.All, 2);
-            view.RPC("TeleportScrewDriver", RpcTarget.All, 2);
-            Player1Send = true;
-        }
-        else if (mItemToPickup.Name == "key" && Player1Send == true)
+
+        if (mItemToPickup.Name == "key" && Player1Send == true)
         {
             view.RPC("SetThisActive", RpcTarget.All, 1);
             view.RPC("TeleportKey", RpcTarget.All, 1);
         }
-        else if (mItemToPickup.Name == "key")
+
+        if (mItemToPickup.Name == "screwdriver")
         {
-            view.RPC("SetThisActive", RpcTarget.All, 1);
+            view.RPC("SetThisActive", RpcTarget.All, 2);
+            view.RPC("TeleportScrewDriver", RpcTarget.All, 2);
+            Player1Send = true;
         }
 
         goItem.transform.parent = null;
