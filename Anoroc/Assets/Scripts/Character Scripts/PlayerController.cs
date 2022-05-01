@@ -38,6 +38,10 @@ public class PlayerController : MonoBehaviour
 
     PhotonView view;
 
+    //[SerializeField] private float interactRange;
+    //private InteractiveObject interactiveObject;
+    //private RaycastHit hit;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -140,6 +144,25 @@ public class PlayerController : MonoBehaviour
 
             inventory.ItemUsed += Inventory_ItemUsed;
             inventory.ItemRemoved += Inventory_ItemRemoved;
+
+            // open stuff
+            // camera needs to be tagged as main camera
+            /*
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, interactRange);
+                if (hit.transform)
+                {
+                    Debug.Log(hit.transform.name);
+                    interactiveObject = hit.transform.GetComponent<InteractiveObject>();
+                }
+
+                if (interactiveObject)
+                {
+                    interactiveObject.PerformAction();
+                }
+            }
+            */
         }
     }
 
