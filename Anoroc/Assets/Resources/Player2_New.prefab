@@ -2053,6 +2053,7 @@ MonoBehaviour:
   Hand: {fileID: 90807682581046942}
   Flames: {fileID: 7379154295508691647, guid: c86bdb5ead83b0f4088c26b0c3820b24, type: 3}
   Hud: {fileID: 7225982413712955190, guid: 433016f86151cd84895ebd04c42a06ac, type: 3}
+  interactRange: 0
 --- !u!114 &4723937063863904760
 MonoBehaviour:
   m_ObjectHideFlags: 0
