@@ -236,13 +236,13 @@ public class PlayerController : MonoBehaviour
     [PunRPC]
     void TeleportKey(int ID)
     {
-        PhotonView.Find(ID).gameObject.transform.position = new Vector3(10.224f, 1.46f, -13.1f);
+        PhotonView.Find(ID).gameObject.transform.position = new Vector3(0.03418f, 0.0441f, 0.0093f);
     }
 
     [PunRPC]
     void TeleportScrewDriver(int ID)
     {
-        PhotonView.Find(ID).gameObject.transform.position = new Vector3(-8.076f, 1.461f, -13.028f);
+        PhotonView.Find(ID).gameObject.transform.position = new Vector3(-8.074f, 2.028f, -13.198f);
     }
 
     public void DropCurrentItem()

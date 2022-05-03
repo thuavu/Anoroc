@@ -1950,7 +1950,7 @@ Transform:
   m_GameObject: {fileID: 4723937063863904765}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.11, y: 1, z: -1.78}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
   m_Children:
   - {fileID: 4723937063250085760}
   - {fileID: 2193698886665200422}
@@ -2053,7 +2053,6 @@ MonoBehaviour:
   Hand: {fileID: 90807682581046942}
   Flames: {fileID: 7379154295508691647, guid: c86bdb5ead83b0f4088c26b0c3820b24, type: 3}
   Hud: {fileID: 7225982413712955190, guid: 433016f86151cd84895ebd04c42a06ac, type: 3}
-  interactRange: 0
 --- !u!114 &4723937063863904760
 MonoBehaviour:
   m_ObjectHideFlags: 0
