@@ -134,6 +134,20 @@ public class PlayerController : MonoBehaviour
                     mItemToPickup.OnPickup();
                     view.RPC("SetThisInactive", RpcTarget.All, 2);
                 }
+                else if (mItemToPickup.Name == "squareKey")
+                {
+                    animator.SetTrigger("tr_pickup");
+                    inventory.AddItem(mItemToPickup);
+                    mItemToPickup.OnPickup();
+                    view.RPC("SetThisInactive", RpcTarget.All, 4);
+                }
+                else if (mItemToPickup.Name == "sphereKey")
+                {
+                    animator.SetTrigger("tr_pickup");
+                    inventory.AddItem(mItemToPickup);
+                    mItemToPickup.OnPickup();
+                    view.RPC("SetThisInactive", RpcTarget.All, 5);
+                }
                 Hud.CloseMessagePanel();
             }
 
@@ -236,7 +250,7 @@ public class PlayerController : MonoBehaviour
     [PunRPC]
     void TeleportKey(int ID)
     {
-        PhotonView.Find(ID).gameObject.transform.position = new Vector3(0.03418f, 0.0441f, 0.0093f);
+        PhotonView.Find(ID).gameObject.transform.position = new Vector3(0.10714f, 0.0369f, 0.00726f);
     }
 
     [PunRPC]

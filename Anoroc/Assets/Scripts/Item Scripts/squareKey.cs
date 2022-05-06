@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Axe : MonoBehaviour, IInventoryItem
+public class squareKey : MonoBehaviour, IInventoryItem
 {
     public string Name
     {
         get
         {
-            return "axe";
+            return "squareKey";
         }
     }
 
